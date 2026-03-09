@@ -37,7 +37,7 @@ CFLAGS	= -g -O2 -Wall $(MACHDEP) -I$(DEVKITPRO)/libogc2/gamecube/include -DPLAT_
 
 LDFLAGS	= -g $(MACHDEP) -L$(DEVKITPRO)/libogc2/gamecube/lib
 # Additional libraries to link against
-LIBS	= -lasnd -lbba -lfat -logc -lm
+LIBS	= -lasnd -lbba -Wl,--whole-archive,-lext2fs,-lfat,--no-whole-archive -logc -lm
 
 
 #---------------------------------------------------------------------------------
